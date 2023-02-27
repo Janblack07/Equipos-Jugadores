@@ -1,0 +1,38 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <form [formGroup]="jugadorForm" (ngSubmit)="onUpdate(jugadorForm.value)">
+            <div>
+                <br>
+                <label for="">Nombre del Jugador</label>
+
+                <input type="text" class="fadeIn second mt-3" placeholder="Nombre del Jugador" formControlName="nombreJ">
+
+            </div>
+            <div>
+                <br>
+                <label for="">Apellido del Jugador</label>
+
+                <input type="text" class="fadeIn second mt-3" placeholder="Apellido del Jugador" formControlName="apellidoJ">
+
+            </div>
+            <div>
+                <br>
+                <label for="">Dorsal del Jugador</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Dorsal  del Jugador" formControlName="dorsalJ">
+            </div>
+            <div>
+                <br>
+                <label for="">Posicion del Jugador</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Posicion del Jugador" formControlName="posicionJ">
+            </div>
+            <div>
+                <select class="form-select" aria-label="Default select example" formControlName="equipo_id">
+            <option selected>{{nomequipo}}</option>
+            <option *ngFor="let item of equipos" value={{item.id}}>{{item.NombreE}}</option>
+          </select>
+            </div>
+            <div>
+                <input type="submit" class="fadeIn fourth mt-3" value="crear jugador">
+            </div>
+        </form>

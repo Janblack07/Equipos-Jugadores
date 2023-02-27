@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apeliido</th>
+            <th scope="col">Dorsal</th>
+            <th scope="col">Posicion</th>
+            <th scope="col">Equipo que pertenece</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of jugadores">
+            <th scope="row"> {{e.id}} </th>
+            <td> {{e.nombreJ}} </td>
+            <td> {{e.apellidoJ}} </td>
+            <td> {{e.dorsalJ}} </td>
+            <td> {{e.posicionJ}} </td>
+            <td> {{e.equipos.NombreE}} </td>
+            <td> <button class="btn btn-outline-primary" (click)="onUpdate(e.id)">editar</button>
+                <button class="btn btn-outline-danger mx-2" (click)="onDelete(e.id)">eliminar</button> </td>
+        </tr>
+    </tbody>
+</table>
